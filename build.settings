@@ -1,0 +1,69 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+settings = {
+
+	plugins = {
+	        ["CoronaProvider.analytics.flurry"] = { publisherId = "com.coronalabs", },
+	},
+	
+	orientation = {
+		default = "portrait",
+		supported = { "portrait", }
+	},
+	
+	iphone = {
+		plist = {
+			UIStatusBarHidden = false,
+			UIPrerenderedIcon = true, -- set to false for "shine" overlay
+			--UIApplicationExitsOnSuspend = true, -- uncomment to quit app on suspend
+			UIAppFonts = 
+				{
+					"Helvetica_Light.ttf",
+					"VLNL Bint.otf",
+				},
+				
+			CFBundleIconFile = "Icon.png",
+            CFBundleIconFiles = {
+                    "Icon.png" , 
+                    "Icon@2x.png" , 
+                    "Icon-72.png" , 
+                    "Icon-72@2x.png",
+                    "Icon-Small.png",
+                    "Icon-Small@2x.png",
+             },
+            
+             FacebookAppID = "412739802186182",
+            
+            -- iOS app URL schemes:
+            CFBundleURLTypes =
+            {
+                {
+                    CFBundleURLSchemes =
+                    {
+                        "fb412739802186182", -- example scheme for facebook
+                    }
+                }
+            }
+            
+		}
+	},
+	
+	android = 
+	{
+		usesPermissions =
+		{
+			"com.android.vending.BILLING",
+		},
+	},
+
+	
+	
+	-- Android permissions
+
+	androidPermissions = {
+  		"android.permission.INTERNET",
+  	},
+
+	
+}
