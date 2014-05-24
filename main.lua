@@ -17,5 +17,6 @@ local function networkListener( event )
     end
 end
 print("oh hai")
+print("such hi ")
 -- Access Google over SSL:
 network.request( "http://hacker-olympics-london.herokuapp.com/leaderboard.json", "GET", networkListener )
